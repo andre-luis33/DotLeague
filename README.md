@@ -1,7 +1,7 @@
 # DotLeague
 DotLeague is a simple REST API for registering soccer teams, leagues, and their matches. The API also provides an endpoint to fetch the league ranking information, to determine the winner :D
 
-<img src="https://thankful-rubidium-b8a.notion.site/image/attachment%3Aefadd166-0190-4522-8c93-00b4dc4e1f8e%3ADotLeague.png?table=block&id=18eac4c3-d49d-80b4-a33f-c31ed8242bbc&spaceId=3e1a57d7-d7f0-418a-ad4c-4dfc10416372&width=1420&userId=&cache=v2" width="600" height="259" />
+<img src="https://raw.githubusercontent.com/andre-luis33/dot-league/refs/heads/main/assets/DotLeague.png" width="600" height="259" />
 
 ## Getting Started
 To configure, run, and contribute with DotLeague, follow these steps:
