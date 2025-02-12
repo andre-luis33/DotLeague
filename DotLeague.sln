@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotLeague", "DotLeague/DotLeague.csproj", "{2750CD43-3A27-A88D-128F-35459AFFFDED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2750CD43-3A27-A88D-128F-35459AFFFDED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2750CD43-3A27-A88D-128F-35459AFFFDED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2750CD43-3A27-A88D-128F-35459AFFFDED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2750CD43-3A27-A88D-128F-35459AFFFDED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBEFA583-6AC8-4E06-9600-F9A234B08A92}
+	EndGlobalSection
+EndGlobal
