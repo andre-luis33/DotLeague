@@ -14,7 +14,6 @@ builder.Services.AddServices();
 var app = builder.Build();
 
 app.MapControllers();
-app.UseHttpsRedirection();
 
 app.ConfigureDatabase();
 app.ConfigureSwagger();
