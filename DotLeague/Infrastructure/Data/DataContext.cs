@@ -4,6 +4,8 @@ using System.Linq;
 using DotLeague.Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 
+namespace DotLeague.Infrastructure.Data;
+
 public class DataContext : DbContext
 {
 	public DbSet<Team> Team { get; set; }
@@ -120,6 +122,21 @@ public class DataContext : DbContext
 		catch (Exception ex)
 		{
 			Console.WriteLine($"Failed to seed database, with the following exception: {ex.Message}");
+		}
+	}
+
+	public bool IsConnectionAvailable()
+	{
+		try
+		{
+			this.Database.OpenConnection();
+			this.Database.CloseConnection();
+			return true;
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"Failed to connect to the database, with the following exception: {ex.Message}");
+			return false;
 		}
 	}
 }

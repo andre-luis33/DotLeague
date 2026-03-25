@@ -1,7 +1,5 @@
-using System;
-using DotLeague.Api;
-using DotLeague.Api.Controllers;
 using DotLeague.Domain.Services;
+using DotLeague.Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,6 +18,7 @@ builder.Services.AddScoped<DataContext>();
 builder.Services.AddScoped<TeamService>();
 builder.Services.AddScoped<LeagueService>();
 builder.Services.AddScoped<MatchService>();
+builder.Services.AddScoped<HealthService>();
 
 var app = builder.Build();
 
@@ -28,11 +27,9 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 
-	using (var scope = app.Services.CreateScope())
-	{
-		var context = scope.ServiceProvider.GetRequiredService<DataContext>();
-		context.Seed();
-	}
+	using var scope = app.Services.CreateScope();
+	var context = scope.ServiceProvider.GetRequiredService<DataContext>();
+	context.Seed();
 }
 
 app.MapControllers();
