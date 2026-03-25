@@ -1,38 +1,22 @@
-using DotLeague.Domain.Services;
-using DotLeague.Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using DotLeague.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Database Injection
-builder.Services.AddScoped<DataContext>();
-
-// Services Injection
-builder.Services.AddScoped<TeamService>();
-builder.Services.AddScoped<LeagueService>();
-builder.Services.AddScoped<MatchService>();
-builder.Services.AddScoped<HealthService>();
+builder.Services.AddDatabase();
+builder.Services.AddServices();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-	app.UseSwagger();
-	app.UseSwaggerUI();
-
-	using var scope = app.Services.CreateScope();
-	var context = scope.ServiceProvider.GetRequiredService<DataContext>();
-	context.Seed();
-}
-
 app.MapControllers();
 app.UseHttpsRedirection();
+
+app.ConfigureDatabase();
+app.ConfigureSwagger();
 
 app.Run();
