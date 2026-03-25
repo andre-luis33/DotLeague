@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using DotLeague.Api.Controllers;
 using DotLeague.Api.Dtos.Requests;
 using DotLeague.Api.Dtos.Response;
 using DotLeague.Domain.Exceptions;
@@ -16,7 +13,7 @@ namespace DotLeague.Api.Controllers;
 [Route("api/leagues")]
 public class LeagueController : MainController
 {
-	private LeagueService _leagueService;
+	private readonly LeagueService _leagueService;
 
 	public LeagueController(LeagueService LeagueService)
 	{

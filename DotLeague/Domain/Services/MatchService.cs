@@ -4,6 +4,7 @@ using System.Linq;
 using DotLeague.Api.Dtos.Requests;
 using DotLeague.Api.Dtos.Response;
 using DotLeague.Domain.Exceptions;
+using DotLeague.Infrastructure.Data;
 using DotLeague.Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,9 +12,9 @@ namespace DotLeague.Domain.Services;
 
 public class MatchService
 {
-	private DataContext _context;
-	private TeamService _teamService;
-	private LeagueService _leagueService;
+	private readonly DataContext _context;
+	private readonly TeamService _teamService;
+	private readonly LeagueService _leagueService;
 
 	public MatchService(DataContext context, TeamService teamService, LeagueService leagueService)
 	{

@@ -4,13 +4,14 @@ using System.Linq;
 using DotLeague.Api.Dtos.Requests;
 using DotLeague.Api.Dtos.Response;
 using DotLeague.Domain.Exceptions;
+using DotLeague.Infrastructure.Data;
 using DotLeague.Infrastructure.Entities;
 
 namespace DotLeague.Domain.Services;
 
 public class LeagueService
 {
-	private DataContext _context;
+	private readonly DataContext _context;
 
 	public LeagueService(DataContext context, TeamService teamService)
 	{
