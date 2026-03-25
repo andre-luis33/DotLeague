@@ -1,0 +1,9 @@
+.config
+.editorconfig
+.gitignore
+.git
+.vscode
+.md
+bin/
+obj/
+.sqlite
