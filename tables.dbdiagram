@@ -1,0 +1,29 @@
+table teams {
+  id         varchar(50)  [pk]
+  name       varchar(100) [not null]
+  state      varchar(100) [not null]
+  city       varchar(100) [not null]
+  stadium    varchar(100) [not null]
+  created_at datetime     [not null]
+  deleted_at datetime     [null]
+}
+
+table leagues {
+  id             varchar(50)  [pk]
+  name           varchar(100) [not null]
+  reference_year int          [not null]
+  start_date     date         [not null]
+  end_date       date         [not null]
+  created_at     datetime     [not null]
+}
+
+table matches {
+  id              varchar(50) [pk]
+  league_id       varchar(50) [not null, ref: > leagues.id]
+  home_team_id    varchar(50) [not null, ref: > teams.id]
+  away_team_id    varchar(50) [not null, ref: > teams.id]
+  home_team_score tinyint     [not null]
+  away_team_score tinyint     [not null]
+  date            datetime    [not null]
+  created_at      datetime    [not null]
+}
